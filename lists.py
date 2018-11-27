@@ -6,7 +6,6 @@ def get_vowel_names(names):
     vowel_list = ['a', 'e', 'i', 'o', 'u']
     return [name for name in names if name[0].lower() in vowel_list]
 
-
 def power_list(numbers):
     """Return a list that contains each number raised to the i-th power."""
     return [number ** power for power, number in enumerate(numbers)] 
@@ -28,7 +27,7 @@ def transpose(matrix):
     #if not matrix:
     #    return []
 
-	#return [[row[i] for row in matrix] for i in range(max(len(row) for row in matrix))]
+    #return [[row[i] for row in matrix] for i in range(max(len(row) for row in matrix))]
     return [list(row) for row in zip(*matrix)]
 
 def get_factors(number):

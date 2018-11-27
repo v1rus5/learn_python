@@ -1,5 +1,5 @@
 import os, sys
-import lists
+import lists, generators
 
 test_group = None
 if len(sys.argv) > 1:
@@ -13,5 +13,12 @@ if test_group == 'list_comp':
 	
 	for method_name in module_methods:
 		os.system('python test.py %s' % method_name)
+
+elif test_group == 'genexp':
+	module_methods = [method for method in dir(generators) if method[0] != '_']
+
+	for method_name in module_methods:
+		os.system('python test.py %s' % method_name)
+
 else:
 	print ('TODO')
