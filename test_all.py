@@ -1,5 +1,5 @@
 import os, sys
-import lists, generators, more
+import lists, generators, more, advanced
 
 test_group = None
 if len(sys.argv) > 1:
@@ -22,6 +22,12 @@ elif test_group == 'genexp':
 
 elif test_group == 'more':
 	module_methods = [method for method in dir(more) if method[0] != '_']
+
+	for method_name in module_methods:
+		os.system('python test.py %s' % method_name)
+
+elif test_group == 'advanced':
+	module_methods = [method for method in dir(advanced) if method[0] != '_']
 
 	for method_name in module_methods:
 		os.system('python test.py %s' % method_name)
